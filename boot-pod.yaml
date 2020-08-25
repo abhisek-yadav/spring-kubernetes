@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: boot-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: springboot-app
+      image: abhisekyadav/spring-dockercompose
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8080
+      env:
+        - name: REDIS_HOST
+          value: boot-pod
+        - name: REDIS_PORT
+          value: "6379"
+    - name: redis
+      image: redis
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 6379

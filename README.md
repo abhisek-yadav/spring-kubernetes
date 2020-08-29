@@ -13,52 +13,56 @@ This image is published to the Docker Hub as well. You can pull the image by usi
 <br/>
 <br/>
 
-## Commands to start Kubernetes cluster:
+## Commands for minikube:
 <br/>
 
 ##### 1. To start the cluster:
 
-  `minikube start`
+         `minikube start`
 
-  The above command will start the Kubernetes cluster. 
-
-- To get more details of running Kubernetes cluster:
-
-  `minikube status`
-  `minikube ip`
-
-- To point our shell/terminal to minikube's docker-daemon:
-
-  `eval $(minikube -p minikube docker-env)`
-
-  Once we are connected to docker-daemon inside Kubernetes, we can execute all the commands supported by docker-cli. 
+###### The above command will start the Kubernetes cluster. 
 
 
-- To open the terminal (this is required when we use Docker driver on darwin):
+##### 2. To get more details of running Kubernetes cluster:
 
-  `minikube service boot-service --url`
+         `minikube status`
+         `minikube ip`
 
-  The above command will start a tunnel for the above-mentioned service.
+
+##### 3. To point our shell/terminal to minikube's docker-daemon:
+
+         `eval $(minikube -p minikube docker-env)`
+
+###### Once we are connected to docker-daemon inside Kubernetes, we can execute all the commands supported by docker-cli. 
+
+
+##### 4. To open the terminal (this is required when we use Docker driver on darwin):
+
+         `minikube service boot-service --url`
+
+###### The above command will start a tunnel for the above-mentioned service.
 
 <br/>
+<br/>
 
-##### 2. To get the details from running Kubernetes cluster:
+## Commands for kubectl:
+<br/>
 
-- To pass the configuration to the running cluster (Declarative Approach):
+##### 1. To pass the configuration to the running cluster (Declarative Approach):
 
-  `kubectl apply -f boot-pod.yaml` 
-  `kubectl apply -f boot-service.yaml`
+         `kubectl apply -f boot-pod.yaml` 
+         `kubectl apply -f boot-service.yaml`
 
-- To get the running objects(Pod, Service, Deployment etc.):
+##### 2. To get the running objects(Pod, Service, Deployment etc.):
 
-  `kubectl get pods`
-  `kubectl get services`
-  `kubectl get deployments`
+         `kubectl get pods`
+         `kubectl get services`
+         `kubectl get deployments`
 
-- To describe a running pod:
+##### 3. To describe a running pod:
 
-  `kubectl describe pod  boot-pod`
+         `kubectl describe pod  boot-pod`
 
-- To get the logs of a running container:
+##### 4. To get the logs of a running container:
 
-  `kubectl logs boot-pod springboot-app`
+         `kubectl logs boot-pod springboot-app`

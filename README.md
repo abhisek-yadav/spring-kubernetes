@@ -6,9 +6,15 @@ Details of the docker image used as part of this exercise can be found in the gi
 
 https://github.com/abhisek-yadav/spring-dockercompose
 
+<br/>
+
 This image is published to the Docker Hub as well. You can pull the image by using the given below command:
 
 `docker pull abhisekyadav/spring-dockercompose`
+
+<br/>
+
+Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 
 <br/>
 <br/>
@@ -18,27 +24,27 @@ This image is published to the Docker Hub as well. You can pull the image by usi
 
 ##### 1. To start the cluster:
 
-         `minikube start`
+         minikube start
 
 ###### The above command will start the Kubernetes cluster. 
 
 
 ##### 2. To get more details of running Kubernetes cluster:
 
-         `minikube status`
-         `minikube ip`
+         minikube status
+         minikube ip
 
 
 ##### 3. To point our shell/terminal to minikube's docker-daemon:
 
-         `eval $(minikube -p minikube docker-env)`
+         eval $(minikube -p minikube docker-env)
 
 ###### Once we are connected to docker-daemon inside Kubernetes, we can execute all the commands supported by docker-cli. 
 
 
 ##### 4. To open the terminal (this is required when we use Docker driver on darwin):
 
-         `minikube service boot-service --url`
+         minikube service boot-service --url
 
 ###### The above command will start a tunnel for the above-mentioned service.
 
@@ -50,19 +56,19 @@ This image is published to the Docker Hub as well. You can pull the image by usi
 
 ##### 1. To pass the configuration to the running cluster (Declarative Approach):
 
-         `kubectl apply -f boot-pod.yaml` 
-         `kubectl apply -f boot-service.yaml`
+         kubectl apply -f boot-pod.yaml
+         kubectl apply -f boot-service.yaml
 
 ##### 2. To get the running objects(Pod, Service, Deployment etc.):
 
-         `kubectl get pods`
-         `kubectl get services`
-         `kubectl get deployments`
+         kubectl get pods
+         kubectl get services
+         kubectl get deployments
 
 ##### 3. To describe a running pod:
 
-         `kubectl describe pod  boot-pod`
+         kubectl describe pod boot-pod
 
 ##### 4. To get the logs of a running container:
 
-         `kubectl logs boot-pod springboot-app`
+         kubectl logs boot-pod springboot-app

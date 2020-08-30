@@ -62,6 +62,13 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 
          kubectl apply -f boot-pod.yaml
          kubectl apply -f boot-service.yaml
+         
+         $ kubectl apply -f boot-pod.yaml
+         pod/boot-pod created
+         
+         $ kubectl apply -f boot-service.yaml
+         service/boot-service created
+         
        
          
 ##### 2. To delete an object that is described in a configuration file:
@@ -69,12 +76,37 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
          kubectl delete -f boot-pod.yaml
          kubectl delete -f boot-service.yaml
          
+         
+         $ kubectl delete -f boot-pod.yaml
+         pod "boot-pod" deleted
+         
+         $ kubectl delete -f boot-service.yaml
+         service "boot-service" deleted
+         
+         
+         
         
 ##### 3. To get the running objects(Pod, Service, Deployment etc.):
 
          kubectl get pods
          kubectl get services
          kubectl get deployments
+         
+         $ kubectl get pods
+         NAME                               READY   STATUS    RESTARTS   AGE
+         boot-deployment-5576f5bd8b-24fg6   2/2     Running   0          55m
+         boot-deployment-5576f5bd8b-7rbhc   2/2     Running   0          55m
+         boot-deployment-5576f5bd8b-wbkkj   2/2     Running   0          55m
+
+         $ kubectl get services
+         NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+         boot-service   NodePort    10.104.226.197   <none>        8080:30813/TCP   2m26s
+         kubernetes     ClusterIP   10.96.0.1        <none>        443/TCP          16d
+
+         $ kubectl get deployments
+         NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+         boot-deployment   3/3     3            3           71m
+
 
 
 ##### 4. To describe a running pod:

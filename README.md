@@ -98,8 +98,24 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 
          kubectl get rs
          
+         $ kubectl get rs
+         NAME                         DESIRED   CURRENT   READY   AGE
+         boot-deployment-5576f5bd8b   2         2         1       22s
+         boot-deployment-855b55459b   2         2         2       16m
+       
+       
+       
+##### 8. To see the Deployment object:
+
+         kubectl get deployments
          
-##### 8. To see the labels automatically generated for each Pod:
+         $ kubectl get deployments
+         NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+         boot-deployment   3/3     2            3           16m
+
+         
+         
+##### 9. To see the labels automatically generated for each Pod:
 
          kubectl get pods --show-labels         
          

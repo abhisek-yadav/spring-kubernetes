@@ -102,3 +102,9 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 ##### 8. To see the labels automatically generated for each Pod:
 
          kubectl get pods --show-labels         
+         
+         $ kubectl get pods --show-labels 
+         NAME                               READY   STATUS    RESTARTS   AGE   LABELS
+         boot-deployment-5576f5bd8b-24fg6   2/2     Running   0          38m   component=web,pod-template-hash=5576f5bd8b
+         boot-deployment-5576f5bd8b-7rbhc   2/2     Running   0          38m   component=web,pod-template-hash=5576f5bd8b
+         boot-deployment-5576f5bd8b-wbkkj   2/2     Running   0          37m   component=web,pod-template-hash=5576f5bd8b

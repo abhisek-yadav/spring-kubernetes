@@ -10,7 +10,7 @@ https://github.com/abhisek-yadav/spring-dockercompose
 
 This image is published to the Docker Hub as well. You can pull the image by using the given below command:
 
-`docker pull abhisekyadav/spring-dockercompose`
+         docker pull abhisekyadav/spring-dockercompose
 
 <br/>
 
@@ -28,21 +28,25 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 
 ###### The above command will start the Kubernetes cluster. 
 
+##### 2. To stop the cluster:
 
-##### 2. To get more details of running Kubernetes cluster:
+         minikube stop
+
+
+##### 3. To get more details of running Kubernetes cluster:
 
          minikube status
          minikube ip
 
 
-##### 3. To point our shell/terminal to minikube's docker-daemon:
+##### 4. To point our shell/terminal to minikube's docker-daemon:
 
          eval $(minikube -p minikube docker-env)
 
 ###### Once we are connected to docker-daemon inside Kubernetes, we can execute all the commands supported by docker-cli. 
 
 
-##### 4. To open the terminal (this is required when we use Docker driver on darwin):
+##### 5. To open the terminal (this is required when we use Docker driver on darwin):
 
          minikube service boot-service --url
 
@@ -54,21 +58,28 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
 ## Commands for kubectl:
 <br/>
 
-##### 1. To pass the configuration to the running cluster (Declarative Approach):
+##### 1. To create/update an object that is described in a configuration file (Declarative Approach):
 
          kubectl apply -f boot-pod.yaml
          kubectl apply -f boot-service.yaml
-
-##### 2. To get the running objects(Pod, Service, Deployment etc.):
+       
+         
+##### 2. To delete an object that is described in a configuration file:
+         
+         kubectl delete -f boot-pod.yaml
+         kubectl delete -f boot-service.yaml
+         
+        
+##### 3. To get the running objects(Pod, Service, Deployment etc.):
 
          kubectl get pods
          kubectl get services
          kubectl get deployments
 
-##### 3. To describe a running pod:
+##### 4. To describe a running pod:
 
          kubectl describe pod boot-pod
 
-##### 4. To get the logs of a running container:
+##### 5. To get the logs of a running container:
 
          kubectl logs boot-pod springboot-app

@@ -76,10 +76,29 @@ Link to Docker Hub: https://hub.docker.com/r/abhisekyadav/spring-dockercompose
          kubectl get services
          kubectl get deployments
 
+
 ##### 4. To describe a running pod:
 
          kubectl describe pod boot-pod
 
+
 ##### 5. To get the logs of a running container:
 
          kubectl logs boot-pod springboot-app
+         
+         
+##### 6. To create/update pods using Deployment object:
+
+         kubectl apply -f boot-deployment.yaml
+         
+###### Deployment objects are like a template for pods.
+
+
+##### 7. To see the ReplicaSet (rs) created by the Deployment:
+
+         kubectl get rs
+         
+         
+##### 8. To see the labels automatically generated for each Pod:
+
+         kubectl get pods --show-labels         
